@@ -1,0 +1,568 @@
+{
+	"info": {
+		"_postman_id": "9da0c825-3a66-4f0d-81bc-310b4d2d28d1",
+		"name": "morpion-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15238443"
+	},
+	"item": [
+		{
+			"name": "AddNewPlayer1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"playerId\": 10,\r\n\t\"displayName\": \"REN\",\r\n\t\"firstName\": \"Reno\",\r\n\t\"lastName\": \"Desor\",\r\n\t\"email\": \"renodesor@yahoo.fr\",\r\n\t\"phone\": null,\r\n\t\"username\": \"reno\",\r\n\t\"password\": \"reno\",\r\n\t\"createBy\": \"toto\",\r\n\t\"createOn\": \"2024-03-22T19:04:33.619\",\r\n\t\"updateBy\": \"null\",\r\n\t\"updateOn\": \"null\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/players/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"players",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewPlayer2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"playerId\": 10,\r\n\t\"displayName\": \"WIS\",\r\n\t\"firstName\": \"Wisline\",\r\n\t\"lastName\": \"Pierre-Louis\",\r\n\t\"email\": \"wisline_pl@yahoo.fr\",\r\n\t\"phone\": null,\r\n\t\"username\": \"wisl\",\r\n\t\"password\": \"wisl\",\r\n\t\"createBy\": \"toto\",\r\n\t\"createOn\": \"2024-03-22T19:11:33.619\",\r\n\t\"updateBy\": \"null\",\r\n\t\"updateOn\": \"null\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/players/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"players",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePlayer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"playerId\": 1,\r\n\t\"displayName\": \"NAE\",\r\n\t\"firstName\": \"Reneaud\",\r\n\t\"lastName\": \"Desormeau\",\r\n\t\"email\": \"renodesor@yahoo.fr\",\r\n\t\"phone\": null,\r\n\t\"username\": \"reno\",\r\n\t\"password\": \"reno\",\r\n\t\"createBy\": \"tata\",\r\n\t\"createOn\": \"2024-03-23T19:04:33.619\",\r\n\t\"updateBy\": \"null\",\r\n\t\"updateOn\": \"null\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/players/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"players",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePlayerById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7002/api/players/delete?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"players",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPlayerById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7002/api/players?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"players"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllPlayers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7002/api/players/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"players",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewGame1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n\t\"gameId\": 1,\r\n\t\"numberOfLines\": 5,\r\n\t\"numberOfColumns\": 5,\r\n\t\"qtySquaresForWinner\": 3,\r\n\t\"gameStatus\": \"RUNNING\",\r\n\t\"firstPlayer\": { \r\n\t\"playerId\": 1,\r\n\t\"displayName\": \"NAU\",\r\n\t\"firstName\": \"Reneaud\",\r\n\t\"lastName\": \"Desormeau\",\r\n\t\"email\": \"renodesor@yahoo.fr\",\r\n\t\"phone\": null,\r\n\t\"username\": \"reno\",\r\n\t\"password\": \"reno\",\r\n\t\"createBy\": \"toto\",\r\n\t\"createOn\": \"2024-03-23T04:00:00\",\r\n\t\"updateBy\": null,\r\n\t\"updateOn\": null \r\n\t},\r\n\t\"secondPlayer\": { \r\n\t\"playerId\": 2,\r\n\t\"displayName\": \"WIS\",\r\n\t\"firstName\": \"Wisline\",\r\n\t\"lastName\": \"Pierre-Louis\",\r\n\t\"email\": \"wisline_pl@yahoo.fr\",\r\n\t\"phone\": null,\r\n\t\"username\": \"wisl\",\r\n\t\"password\": \"wisl\",\r\n\t\"createBy\": \"toto\",\r\n\t\"createOn\": \"2024-03-23T04:00:00\",\r\n\t\"updateBy\": null,\r\n\t\"updateOn\": null \r\n\t},\r\n\t\"createBy\": \"toto\",\r\n\t\"createOn\": \"2024-03-23T19:16:26\",\r\n\t\"updateBy\": \"toto\",\r\n\t\"updateOn\": \"2024-03-23T19:16:26\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/games/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"games",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewGame2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n\t\"gameId\": 3,\r\n\t\"numberOfLines\": 20,\r\n\t\"numberOfColumns\": 10,\r\n\t\"qtySquaresForWinner\": 5,\r\n\t\"gameStatus\": \"RUNNING\",\r\n\t\"firstPlayer\": { \r\n\t\"playerId\": 2,\r\n\t\"displayName\": \"WIS\",\r\n\t\"firstName\": \"Wisline\",\r\n\t\"lastName\": \"Pierre-Louis\",\r\n\t\"email\": \"wisline_pl@yahoo.fr\",\r\n\t\"phone\": null,\r\n\t\"username\": \"wisl\",\r\n\t\"password\": \"wisl\",\r\n\t\"createBy\": \"toto\",\r\n\t\"createOn\": \"2024-03-23T04:00:00\",\r\n\t\"updateBy\": null,\r\n\t\"updateOn\": null \r\n\t},\r\n\t\"secondPlayer\": { \r\n\t\"playerId\": 1,\r\n\t\"displayName\": \"NAU\",\r\n\t\"firstName\": \"Reneaud\",\r\n\t\"lastName\": \"Desormeau\",\r\n\t\"email\": \"renodesor@yahoo.fr\",\r\n\t\"phone\": null,\r\n\t\"username\": \"reno\",\r\n\t\"password\": \"reno\",\r\n\t\"createBy\": \"toto\",\r\n\t\"createOn\": \"2024-03-23T04:00:00\",\r\n\t\"updateBy\": null,\r\n\t\"updateOn\": null \r\n\t},    \r\n\t\"createBy\": \"toto\",\r\n\t\"createOn\": \"2024-03-23T19:16:26\",\r\n\t\"updateBy\": \"toto\",\r\n\t\"updateOn\": \"2024-03-23T19:16:26\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/games/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"games",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateGame",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gameId\": 1,\r\n    \"numberOfLines\": 10,\r\n    \"numberOfColumns\": 10,\r\n    \"qtySquaresForWinner\": 4,\r\n    \"gameStatus\": \"COMPLETED\",\r\n    \"firstPlayer\": {\r\n        \"playerId\": 1,\r\n        \"displayName\": \"NAU\",\r\n        \"firstName\": \"Reneaud\",\r\n        \"lastName\": \"Desormeau\",\r\n        \"email\": \"renodesor@yahoo.fr\",\r\n        \"phone\": null,\r\n        \"username\": \"reno\",\r\n        \"password\": \"reno\",\r\n        \"createBy\": \"toto\",\r\n        \"createOn\": \"2024-03-23T04:00:00\",\r\n        \"updateBy\": null,\r\n        \"updateOn\": null\r\n    },\r\n    \"secondPlayer\": {\r\n        \"playerId\": 2,\r\n        \"displayName\": \"WIS\",\r\n        \"firstName\": \"Wisline\",\r\n        \"lastName\": \"Pierre-Louis\",\r\n        \"email\": \"wisline_pl@yahoo.fr\",\r\n        \"phone\": null,\r\n        \"username\": \"wisl\",\r\n        \"password\": \"wisl\",\r\n        \"createBy\": \"toto\",\r\n        \"createOn\": \"2024-03-23T04:00:00\",\r\n        \"updateBy\": null,\r\n        \"updateOn\": null\r\n    },\r\n    \"createBy\": \"toto\",\r\n    \"createOn\": \"2024-03-23T19:16:26\",\r\n    \"updateBy\": \"toto\",\r\n    \"updateOn\": \"2024-03-23T19:16:26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/games/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"games",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteGameById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/games/delete?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"games",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGameById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/games?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"games"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllGames",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/games/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"games",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewGameContent1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gameId\": 1,\r\n    \"squaresData\": \"{'s00':2, 's01':0, 's02':1, 's03':0}\",\r\n    \"movesHistory\": \"{'s00':2, 's01':0, 's02':1, 's03':0}\",\r\n    \"createBy\": \"toto\",\r\n    \"createOn\": \"2024-03-23T19:16:26\",\r\n    \"updateBy\": \"toto\",\r\n    \"updateOn\": \"2024-03-23T19:16:26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/game-contents/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"game-contents",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewGameContent2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gameId\": 1,\r\n    \"squaresData\": \"{'s00':2, 's01':0, 's02':1, 's03':0}\",\r\n    \"movesHistory\": \"{'s00':2, 's01':0, 's02':1, 's03':0}\",\r\n    \"createBy\": \"toto\",\r\n    \"createOn\": \"2024-03-23T19:16:26\",\r\n    \"updateBy\": \"toto\",\r\n    \"updateOn\": \"2024-03-23T19:16:26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/game-contents/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"game-contents",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateGameContent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gameId\": 1,\r\n    \"squaresData\": \"{'s00':2, s01':0, 's02':1, 's03':0, 's04':2, 's05':1, 's06':0, 's07':1}\",\r\n    \"movesHistory\": \"{'s00':2, s01':0, 's02':1, 's03':0, 's04':2, 's05':1, 's06':0, 's07':1}\",\r\n    \"createBy\": \"toto\",\r\n    \"createOn\": \"2024-03-23T19:16:26\",\r\n    \"updateBy\": \"toto\",\r\n    \"updateOn\": \"2024-03-23T19:16:26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/game-contents/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"game-contents",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteGameContentById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/game-contents/delete?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"game-contents",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGameContentById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/game-contents?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"game-contents"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllGameContent",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7002/api/game-contents/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"api",
+						"game-contents",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
