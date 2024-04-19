@@ -1,20 +1,15 @@
 package com.renodesor.morpionapi.entity;
 
-import com.renodesor.morpionapi.utils.Converter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.IOException;
-import java.sql.Clob;
-import java.sql.SQLException;
 import java.util.Date;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Getter
 @Setter
 @NoArgsConstructor
-//@AllArgsConstructor
 @Entity
 @Table(name = "GAME_CONTENT", schema = "MORPION")
 public class GameContent extends AccessInfo {
@@ -26,6 +21,9 @@ public class GameContent extends AccessInfo {
     private String squaresData;
     @Column(name = "MOVES_HISTORY")
     private String movesHistory;
+    @Column(name = "IS_FIRST_PLAYER_NEXT")
+    private String isFirstPlayerNext;
+
 
     public GameContent(Integer gameId, String squaresData, String movesHistory,
                        String createBy, Date createOn, String UpdateBy, Date updateOn) {

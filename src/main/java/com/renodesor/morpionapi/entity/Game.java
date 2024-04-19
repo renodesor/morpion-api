@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Clob;
 import java.util.Date;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})

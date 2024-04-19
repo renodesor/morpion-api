@@ -3,10 +3,6 @@ package com.renodesor.morpionapi.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Date;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -37,11 +33,13 @@ public class Player extends AccessInfo {
     private String username;
     @Column(name = "PASSWORD", nullable = false, length = 100)
     private String password;
+    @Column(name = "LAST_SESSION_ID", length = 36)
+    private String lastSessionId;
 
     public Player(Integer playerId, String displayName, String firstName, String lastName,
-                  String email, String phone, String username, String password,
-                  String createBy, Date createOn, String UpdateBy, Date updateOn) {
-        super(createBy, createOn, UpdateBy, updateOn);
+                  String email, String phone, String username, String password, String lastSessionId,
+                  String createBy, Date createOn, String updateBy, Date updateOn) {
+        super(createBy, createOn, updateBy, updateOn);
         this.playerId = playerId;
         this.displayName = displayName;
         this.firstName = firstName;
@@ -50,10 +48,11 @@ public class Player extends AccessInfo {
         this.phone = phone;
         this.username = username;
         this.password = password;
+        this.lastSessionId = lastSessionId;
     }
 
     public Player(Integer playerId, String displayName, String firstName, String lastName,
-                  String email, String phone, String username, String password,
+                  String email, String phone, String username, String password, String lastSessionId,
                   String createBy, Date createOn) {
         super(createBy, createOn, null, null);
         this.playerId = playerId;
@@ -64,6 +63,7 @@ public class Player extends AccessInfo {
         this.phone = phone;
         this.username = username;
         this.password = password;
+        this.lastSessionId = lastSessionId;
     }
 
     @Override
@@ -76,6 +76,7 @@ public class Player extends AccessInfo {
                 "\"phone\":" + phone +","+
                 "\"username\":\"" + username + "\"," +
                 "\"password\":\"" + password + "\"," +
+                "\"lastSessionId\":\"" + lastSessionId + "\"," +
                 "\"createBy\":\"" + this.getCreateBy() + "\"," +
                 "\"createOn\":\"" + this.getCreateOn() + "\"," +
                 "\"updateBy\":\"" + this.getUpdateBy() + "\"," +

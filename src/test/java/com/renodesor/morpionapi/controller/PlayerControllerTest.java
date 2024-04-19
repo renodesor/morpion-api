@@ -143,6 +143,24 @@ void testGetPlayerById() throws Exception {
 }
 
     @Test
+    @DisplayName("Get a player by id")
+    @Sql({"classpath:db-scripts/schema.sql", "classpath:db-scripts/data.sql"})
+    void testGetPlayerByUsernameAndPassword() throws Exception {
+        String username = "reno";
+        String password = "reno";
+        String response = mvc
+                .perform(get("/api/players/usr-psw?username="+username+"&password="+password))
+                .andReturn().getResponse().getContentAsString();
+
+        Player player = (Player) Converter.convertJsonToObject(response, "Player");
+
+        assertNotNull(player);
+        assertEquals("NAU", player.getDisplayName());
+        assertEquals("Reneaud", player.getFirstName());
+        assertEquals("Desormeau", player.getLastName());
+    }
+
+    @Test
     @DisplayName("Get all players")
     @Sql({"classpath:db-scripts/schema.sql", "classpath:db-scripts/data.sql"})
     void testGetAllPlayer() throws Exception {

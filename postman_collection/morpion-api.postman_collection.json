@@ -434,7 +434,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"gameId\": 1,\r\n    \"squaresData\": \"{'s00':2, s01':0, 's02':1, 's03':0, 's04':2, 's05':1, 's06':0, 's07':1}\",\r\n    \"movesHistory\": \"{'s00':2, s01':0, 's02':1, 's03':0, 's04':2, 's05':1, 's06':0, 's07':1}\",\r\n    \"createBy\": \"toto\",\r\n    \"createOn\": \"2024-03-23T19:16:26\",\r\n    \"updateBy\": \"toto\",\r\n    \"updateOn\": \"2024-03-23T19:16:26\"\r\n}",
+					"raw": "{\r\n    \"gameId\": 1,\r\n    \"squaresData\": \"{'s00':2, s01':0, 's02':1, 's03':0, 's04':2, 's05':1, 's06':0, 's07':1}\",\r\n    \"movesHistory\": \"{'s00':2, s01':0, 's02':1, 's03':0, 's04':2, 's05':1, 's06':0, 's07':1}\",\r\n    \"isFirstPlayerNext\": \"Y\",\r\n    \"createBy\": \"toto\",\r\n    \"createOn\": \"2024-03-23T19:16:26\",\r\n    \"updateBy\": \"toto\",\r\n    \"updateOn\": \"2024-03-23T19:16:26\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

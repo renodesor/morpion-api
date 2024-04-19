@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = {"http://localhost:3000", "http://192.168.2.12:3000"})
 @RestController
 public class PlayerController {
 
@@ -63,6 +64,17 @@ public class PlayerController {
     public ResponseEntity<Player> getPlayerById(@RequestParam Integer id) {
         Player player = playerRepository.getReferenceById(id);
 
+        if (player != null) {
+            return new ResponseEntity<>(player, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/api/players/usr-psw")
+    public ResponseEntity<Player> getPlayerByUsernameAndPassword(@RequestParam String username, @RequestParam String password) {
+        List<Player> players = playerRepository.findByUsernameAndPassword(username, password);
+        Player player = players == null || players.isEmpty() ? null : playerRepository.findByUsernameAndPassword(username, password).get(0);
         if (player != null) {
             return new ResponseEntity<>(player, HttpStatus.OK);
         } else {
